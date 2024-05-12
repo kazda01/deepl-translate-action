@@ -1,0 +1,34 @@
+name: 'DeepL Translate Action'
+description: 'Invoke DeepL Translate Tool with specified arguments for translation integration in your workflows for any application'
+author: 'Antonín Kazda'
+inputs:
+  api-key:
+    description: 'DeepL API authentication key'
+    required: true
+  adapter:
+    description: 'Adapter to use for input and output files'
+    required: false
+    default: 'plaintext'
+  source-language:
+    description: 'Source language for translation'
+    required: false
+    default: 'en'
+  languages:
+    description: 'Languages to translate to, separated by space'
+    required: false
+    default: 'en'
+  input-file:
+    description: 'Input file to translate. If not specified, input file is defined by choosen adapter'
+    required: false
+  path:
+    description: 'Working directory path. Input and output files are relative to this path'
+    required: false
+    default: ''
+  no-cache:
+    description: 'Whether to disable caching of translation results. Caching is enabled by default and queries are cached for 1 month'
+    required: false
+    default: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
