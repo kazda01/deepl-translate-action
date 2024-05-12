@@ -17,5 +17,6 @@ echo "Languages: $4"
 echo "Input File: $5"
 echo "Path: $6"
 echo "No Cache: $7"
+echo "Verbose: $8"
 
-dotnet run --
+dotnet run -- translate --api-key $1 --adapter $2 --source-language $3 --languages $4 --input-file $5 --path $6 --no-cache $7 --verbose $8

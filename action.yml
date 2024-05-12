@@ -28,6 +28,10 @@ inputs:
     description: 'Whether to disable caching of translation results. Caching is enabled by default and queries are cached for 1 month'
     required: false
     default: false
+  verbose:
+    description: 'Print verbose output.'
+    required: false
+    default: false
 
 runs:
   using: 'docker'
@@ -40,3 +44,4 @@ runs:
     - ${{ inputs.input-file }}
     - ${{ inputs.path }}
     - ${{ inputs.no-cache }}
+    - ${{ inputs.verbose }}
