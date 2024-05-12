@@ -27,21 +27,12 @@ inputs:
   no-cache:
     description: 'Whether to disable caching of translation results. Caching is enabled by default and queries are cached for 1 month'
     required: false
-    default: false
+    default: 'false'
   verbose:
     description: 'Print verbose output.'
     required: false
-    default: false
+    default: 'false'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.api-key }}
-    - ${{ inputs.adapter }}
-    - ${{ inputs.source-language }}
-    - ${{ inputs.languages }}
-    - ${{ inputs.input-file }}
-    - ${{ inputs.path }}
-    - ${{ inputs.no-cache }}
-    - ${{ inputs.verbose }}
+  using: 'node20'
+  main: 'index.js'
