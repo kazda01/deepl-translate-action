@@ -8,8 +8,6 @@ printf '\n'
 git clone https://github.com/kazda01/deepl-translate-tool.git
 cd deepl-translate-tool
 ls -l
-cd DeeplTranslateTool
-ls -l
-cd DeeplTranslateTool
+cd DeepLTranslateTool
 
 dotnet run --
