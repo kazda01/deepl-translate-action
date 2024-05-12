@@ -32,3 +32,11 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.api-key }}
+    - ${{ inputs.adapter }}
+    - ${{ inputs.source-language }}
+    - ${{ inputs.languages }}
+    - ${{ inputs.input-file }}
+    - ${{ inputs.path }}
+    - ${{ inputs.no-cache }}
