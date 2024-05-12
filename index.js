@@ -1,8 +1,27 @@
 const core = require('@actions/core');
+const github = require('@actions/github');
 const exec = require('@actions/exec');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+
+
+
+try {
+  // Fetch the value of the input 'who-to-greet' specified in action.yml
+  const nameToGreet = core.getInput('adapter');
+  console.log(`Hello ${nameToGreet}!`);
+  
+  // Record the time of greeting as an output
+  const time = (new Date()).toTimeString();
+  core.setOutput("time", time);
+
+
+
+} catch (error) {
+  // Handle errors and indicate failure
+  core.setFailed(error.message);
+}
 
 async function downloadFile(url, targetPath) {
   return new Promise((resolve, reject) => {
