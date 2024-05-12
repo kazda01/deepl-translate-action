@@ -6,10 +6,10 @@ printf " '%s'" "$@"
 printf '\n'
 
 git clone https://github.com/kazda01/deepl-translate-tool.git
-ls
 cd deepl-translate-tool
-ls
+ls -l
 cd DeeplTranslateTool
-ls
+ls -l
+cd DeeplTranslateTool
 
 dotnet run --
